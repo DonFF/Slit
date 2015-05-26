@@ -109,3 +109,5 @@ compile "org.slf4j:jcl-over-slf4j:1.7.12"
 
 
 
+7, Slit的demo在test中可见两种不同的启动方式，可自行参考，更多问题可加入群共同讨论，群号：213109134 
+
