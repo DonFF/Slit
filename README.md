@@ -90,4 +90,13 @@ Slit使用到的技术
 
 
 
+Slit使用到的jar包列表，在本项目的src/test/lib下都已经包含了这些jar包 ：
+compile "commons-lang:commons-lang:2.6"
+compile "org.htmlparser:htmlparser:2.1"
+compile "org.seleniumhq.selenium:selenium-java:2.45.0"
+compile "ch.qos.logback:logback-classic:1.1.3"
+compile "org.codehaus.groovy:groovy:2.4.3"
+compile "org.slf4j:slf4j-api:1.7.12"
+compile "org.slf4j:jcl-over-slf4j:1.7.12"
+
 
