@@ -13,6 +13,8 @@ Slit的特点
 
 
 
+
+
 Slit项目一共有3个主要模块：
 
 1，Fetcher模块，主要负责从url等待队列头取url，然后去下载页面，把整个页面结果放入已经下载页面队列。
@@ -20,6 +22,8 @@ Slit项目一共有3个主要模块：
 2，Analyzer模块，主要负责从已经下载页面，提取想要的结果，放入抓取结果队列，另外再找出本页面上的其他连接，放入url等待队列。
 
 3，Store模块，主要负责从抓取的结果队列中取出结果，然后根据用户自定义来怎么处理这些结果。
+
+
 
 
 Slit的使用
@@ -31,11 +35,19 @@ Slit的使用
 3，启动Slit项目，
 
 Config config = new Config();
+
 config.setStartUrlList(Arrays.asList(“https://git.oschina.net/explore/recommend”));    //  需要爬取的url列表
+
 config.setNodeFilterClass(MyNodeFilter.class);                                         //  步骤一中自定义的类
+
 config.setFileStoreClass(MyFileStore.class);                                           //  步骤二中自定义的类
+
 InitSlit slit = new InitSlit(config);
+
 slit.start();                                                       //  启动, 可以设置不同模块线程数，详见类config
+
+
+
 
 
 
@@ -51,13 +63,22 @@ Slit的使用(带浏览器爬)
 
 5， 启动Slit项目，
 Config config = new Config();
+
 config.setNodeFilterClass(MyBrowserNodeFilter.class);         // 步骤一中定义的类
+
 config.setFileStoreClass(MyBrowserFileStore.class);           // 步骤二中定义的类
+
 config.setInBrowser(true);                                                      // 设置浏览器为true
+
 config.setBrowserAction(MyBrowserAction.class);               // 步骤三中定义的类
+
 config.setBrowserDriverPath(“/”);                 //  chrome对应系统的webDriver文件的路径
+
 InitSlit init = new InitSlit(config);
+
 init.start();
+
+
 
 
 
